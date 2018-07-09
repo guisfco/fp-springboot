@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.cadclientes.model.Cliente;
-import br.com.cadclientes.respository.ClienteRepository;
+import br.com.cadclientes.repository.ClienteRepository;
 
 @RestController
 @RequestMapping("/clientes")

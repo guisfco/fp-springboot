@@ -1,4 +1,4 @@
-package br.com.cadclientes.respository;
+package br.com.cadclientes.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
