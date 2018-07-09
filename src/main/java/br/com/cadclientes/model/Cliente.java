@@ -8,15 +8,15 @@ import javax.persistence.Id;
 public class Cliente {
 
 	private @Id @GeneratedValue long id;
-	private String nome;
+	private String name;
 
 	public Cliente() {
 	}
 
-	public Cliente(long id, String nome) {
+	public Cliente(long id, String name) {
 		super();
 		this.id = id;
-		this.nome = nome;
+		this.name = name;
 	}
 
 	public long getId() {
@@ -28,11 +28,11 @@ public class Cliente {
 	}
 
 	public String getNome() {
-		return nome;
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNome(String name) {
+		this.name = name;
 	}
 
 }

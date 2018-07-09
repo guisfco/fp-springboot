@@ -24,7 +24,7 @@ public class ClienteController {
 	
 	@PostMapping
 	public ResponseEntity<?> save(@RequestBody Cliente cliente) {
-		return new ResponseEntity<>(clienteRepository.save(cliente),HttpStatus.OK);
+		return new ResponseEntity<>(clienteRepository.save(cliente),HttpStatus.CREATED);
 	}
 	
 	@GetMapping
@@ -33,8 +33,13 @@ public class ClienteController {
 	}
 	
 	@GetMapping(path="/{id}")
-	public ResponseEntity<?> findClienteById(@PathVariable("id") long id) {
+	public ResponseEntity<?> findById(@PathVariable long id) {
 		return new ResponseEntity<>(clienteRepository.findById(id),HttpStatus.OK);
+	}
+	
+	@GetMapping(path="/findbyname/{name}")
+	public ResponseEntity<?> findClienteByName(@PathVariable String name) {
+		return new ResponseEntity<>(clienteRepository.findByNameIgnoreCaseContaining(name),HttpStatus.OK);
 	}
 	
 	@DeleteMapping
@@ -44,7 +49,7 @@ public class ClienteController {
 	}
 	
 	@DeleteMapping(path="/{id}")
-	public ResponseEntity<?> deleteClienteById(@PathVariable("id") long id) {
+	public ResponseEntity<?> deleteById(@PathVariable long id) {
 		clienteRepository.deleteById(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
